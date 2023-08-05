@@ -96,7 +96,7 @@ export const PagarAgenda = () => {
 
 
     const [state, setState] = useState(init);
-    const resultPayment = useMercadoPago(`${servicioosAgrup[1]}`);
+    const resultPayment = useMercadoPago(`${servicioosAgrup[1]}`,personas);
     const [status, setstatus] = useState(null);
     
 
@@ -119,14 +119,14 @@ export const PagarAgenda = () => {
 
 
     useEffect(() => {
-        resultPayment && setstatus(resultPayment.status);
+       // resultPayment && setstatus(resultPayment.status);
     }, [resultPayment]);
 
     const navigate = useNavigate();
     
 
     useEffect(() => {
-         resultPayment && navigate("/citas/orden/",{replace: true, state: resultPayment });
+        //  resultPayment && navigate("/citas/orden/",{replace: true, state: resultPayment });
     },[status]);
 
     const onclick = () =>{

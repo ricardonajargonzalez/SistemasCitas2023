@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useScript from "./useScript";
 import { formConfig } from "../App/components/formConfig"; 
 
-export default function useMercadoPago(total) {
+export default function useMercadoPago(total,personas) {
     const [resultPayment, setResultPayment] = useState(undefined);
     // const [resultPayment, setResultPayment] = useState(undefined);
        
@@ -41,7 +41,7 @@ export default function useMercadoPago(total) {
                             cardholderEmail: email,
                             amount,
                             token,
-                            installments,
+                            installments
                             // identificationNumber,
                             // identificationType,
                         } = cardForm.getCardFormData();
@@ -75,7 +75,8 @@ export default function useMercadoPago(total) {
                                         //     number: identificationNumber,
                                         // },
                                     },
-                                    notification_url : "https://ricardonajar.com/WebHooks/eventos.php?source_news=webhooks"
+                                    notification_url : "https://ricardonajar.com/WebHooks/eventos.php?source_news=webhooks",
+                                    orden : personas
                                 }),
                             }
                         )

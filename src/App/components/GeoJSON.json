@@ -1,0 +1,27 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-110.9179959,27.9556622]
+            },
+            "properties": {
+                "title": "Abarrey - Guaymas Norte",
+                "description": "Mar del Nte. s/n, Luis Donaldo Colosio, 85425 Heroica Guaymas, Son."
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-110.9086377,27.8967757] 
+            },
+            "properties": {
+                "title": "Abarrey - Guaymas",
+                "description": "Carretera al varadero #1507-A, Ramón Gil Samaniego, 85470 Heroica Guaymas, Son."
+            }
+        }
+    ]
+}

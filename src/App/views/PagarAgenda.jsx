@@ -80,7 +80,7 @@ const buscarServicioRepetido = (pitemAgrupados, pservicioid) =>{
 
 export const PagarAgenda = () => {
 
-    const { servicios, personas } = useSelector(state => state.stateWizard);
+    const { servicios, personas, sucursal } = useSelector(state => state.stateWizard);
     const servicioosAgrup = allServices(servicios, personas ); //[0] listadoservicios,[1] total
     // const notify = (texto) => {toast.success(texto)};
   
@@ -96,7 +96,7 @@ export const PagarAgenda = () => {
 
 
     const [state, setState] = useState(init);
-    const resultPayment = useMercadoPago(`${servicioosAgrup[1]}`,personas);
+    const resultPayment = useMercadoPago(`${servicioosAgrup[1]}`,personas, sucursal);
     const [status, setstatus] = useState(null);
     
 

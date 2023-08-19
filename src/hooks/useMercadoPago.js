@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useScript from "./useScript";
 import { formConfig } from "../App/components/formConfig"; 
 
-export default function useMercadoPago(total,personas) {
+export default function useMercadoPago(total,personas,sucursal) {
     const [resultPayment, setResultPayment] = useState(undefined);
     // const [resultPayment, setResultPayment] = useState(undefined);
        
@@ -13,7 +13,7 @@ export default function useMercadoPago(total,personas) {
     );
 
     const publicKey = "TEST-9d20c7f8-03e4-4c50-b1dd-3c9ac8b913dd";
-    const baseurlserver = "https://ricardonajar.com/ApiSC/v1";
+    const baseurlserver =  import.meta.env.VITE_BASE_URL_API;
 
     useEffect(() => {
         if (MercadoPago) {
@@ -76,7 +76,8 @@ export default function useMercadoPago(total,personas) {
                                         // },
                                     },
                                     notification_url : "https://ricardonajar.com/WebHooks/eventos.php?source_news=webhooks",
-                                    orden : personas
+                                    orden : personas,
+                                    sucursal: sucursal
                                 }),
                             }
                         )
